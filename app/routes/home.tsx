@@ -1,13 +1,24 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import TodoApp from "../components/TodoApp";
+import { getTodos } from "~/service/todoListService";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
+export async function clientLoader() {
+  const todoResponse = await getTodos();
+  return {
+    todoResponse,
+  };
 }
 
-export default function Home() {
-  return <Welcome />;
+type HomeProps = {
+  loaderData: {
+    todoResponse: TodosResponseType;
+  };
+};
+export default function Home({ loaderData }: HomeProps) {
+  const { todoResponse } = loaderData;
+
+  return (
+    <>
+      <TodoApp todos={todoResponse?.todos} />
+    </>
+  );
 }
