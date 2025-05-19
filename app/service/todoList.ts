@@ -2,20 +2,14 @@ function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export const getTodos = async (): Promise<TodosResponseType> => {
+// TODO How would you type this function with TypeScript
+export const getTodos = async () => {
   await delay(200);
 
-  const options = {
-    method: "GET",
-    headers: new Headers({
-      "Content-Type": "application/json",
-    }),
-  };
+  // TODO fetch list of todos
+  // GET https://dummyjson.com/todos
 
-  const response = await fetch("https://dummyjson.com/todos", options);
-  const mockTodos = await response.json();
-
-  return mockTodos;
+  return [];
 };
 
 export const updateTodo = async (id: number): Promise<TodosResponseType> => {

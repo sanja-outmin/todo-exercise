@@ -1,5 +1,5 @@
 import TodoApp from "../components/TodoApp";
-import { getTodos } from "~/service/todoListService";
+import { getTodos } from "~/service/todoList";
 
 export async function clientLoader() {
   const todoResponse = await getTodos();
