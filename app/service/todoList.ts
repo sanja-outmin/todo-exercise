@@ -6,7 +6,7 @@ function delay(ms: number) {
 export const getTodos = async () => {
   await delay(200);
 
-  // TODO fetch list of todos
+  // TODO get list of todos
   // GET https://dummyjson.com/todos
 
   return { todos: [] };

@@ -1,9 +1,8 @@
 import React from "react";
-import { clsx } from "clsx";
 
 // TODO In TypeScript, how would you reuse TodoType, not tell it to exclude userId
 const TodoItem = ({ id, todo, completed }: any) => {
-  // TODO update todo idem, and sticke through if completed
+  // TODO update todo idem, and strike through if completed
   // if isCompleted apply "line-through italic text-gray-400"
   // if !isCompleted apply "text-gray-700"
 
