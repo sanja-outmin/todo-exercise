@@ -1,30 +1,22 @@
 import React from "react";
-import { updateTodo } from "~/service/todoList";
 import { clsx } from "clsx";
 
-const TodoItem = ({ id, todo, completed }: Omit<TodoType, "userId">) => {
-  const [isCompleted, setIsCompleted] = React.useState(completed);
+// TODO In TypeScript, how would you reuse TodoType, not tell it to exclude userId
+const TodoItem = ({ id, todo, completed }: any) => {
+  // TODO update todo idem, and sticke through if completed
+  // if isCompleted apply "line-through italic text-gray-400"
+  // if !isCompleted apply "text-gray-700"
 
   return (
     <li className="flex items-center justify-between bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition">
       <label className="flex items-center space-x-3">
         <input
-          checked={isCompleted}
+          checked={false}
           type="checkbox"
           className="form-checkbox h-5 w-5 text-indigo-600 rounded"
-          onChange={async () => {
-            setIsCompleted(!isCompleted);
-            await updateTodo(id);
-          }}
+          onChange={async () => {}}
         />
-        <span
-          className={clsx({
-            "text-gray-700": !isCompleted,
-            "line-through italic text-gray-400": isCompleted,
-          })}
-        >
-          {todo}
-        </span>
+        <span>{todo}</span>
       </label>
     </li>
   );

@@ -12,18 +12,9 @@ export const getTodos = async () => {
   return [];
 };
 
-export const updateTodo = async (id: number): Promise<TodoType> => {
-  const options = {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      completed: false,
-    }),
-  };
+export const updateTodo = async (id: number) => {
+  // UPDATE a todo
+  // PUT https://dummyjson.com/todos/${id}
 
-  const response = await fetch(`https://dummyjson.com/todos/${id}`, options);
-
-  const updatedTodo = await response.json();
-
-  return updatedTodo;
+  return {};
 };
