@@ -9,7 +9,7 @@ export const getTodos = async () => {
   // TODO fetch list of todos
   // GET https://dummyjson.com/todos
 
-  return [];
+  return { todos: [] };
 };
 
 export const updateTodo = async (id: number) => {

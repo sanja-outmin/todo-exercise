@@ -16,7 +16,6 @@ const TodoApp = ({ todos }: TodoAppProps) => {
         <ul className="space-y-4">
           {todos.map((item) => (
             <TodoItem
-              key={item.id}
               id={item.id}
               todo={item.todo}
               completed={item.completed}
