@@ -18,21 +18,16 @@ export const getTodos = async (): Promise<TodosResponseType> => {
   return mockTodos;
 };
 
-export const updateTodo = async (id: number): Promise<TodosResponseType> => {
+export const updateTodo = async (id: number): Promise<TodoType> => {
   const options = {
-    method: "GET",
-    headers: new Headers({
-      "Content-Type": "application/json",
-    }),
-  };
-
-  const response = await fetch(`https://dummyjson.com/todos/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       completed: false,
     }),
-  });
+  };
+
+  const response = await fetch(`https://dummyjson.com/todos/${id}`, options);
 
   const updatedTodo = await response.json();
 

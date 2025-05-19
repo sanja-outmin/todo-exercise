@@ -1,5 +1,5 @@
 import React from "react";
-import { updateTodo } from "~/service/todoListService";
+import { updateTodo } from "~/service/todoList";
 import { clsx } from "clsx";
 
 const TodoItem = ({ id, todo, completed }: Omit<TodoType, "userId">) => {
