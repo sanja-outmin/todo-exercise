@@ -8,7 +8,7 @@ type TodoAppProps = {
 const TodoApp = ({ todos }: TodoAppProps) => {
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
+      <div className="bg-white shadow-xl rounded-2xl p-8 max-w-2xl">
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
           Marie's todo list
         </h1>
